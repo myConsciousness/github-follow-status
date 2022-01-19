@@ -1,0 +1,1 @@
+# github-subscription-manager
