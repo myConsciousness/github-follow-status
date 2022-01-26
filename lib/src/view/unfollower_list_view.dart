@@ -27,7 +27,7 @@ class _UnfollowerListViewState extends State<UnfollowerListView> {
   @override
   Widget build(BuildContext context) => Scaffold(
         body: CommonNestedScrollView(
-          title: const CommonAppBarTitle(title: 'Unfollow User'),
+          title: const CommonAppBarTitle(title: 'Unfollowers'),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -94,16 +94,10 @@ class _UnfollowerListViewState extends State<UnfollowerListView> {
                                   ElevatedButton(
                                     child: const Text('Unfollow'),
                                     onPressed: () async {
-                                      final unfollowed = await _unfollow(
+                                      await _unfollow(
                                         token: _tokenTextController.text,
                                         username: '${unfollowers[index].login}',
                                       );
-
-                                      if (!unfollowed) {
-                                        // do somthing when it's failed
-                                      }
-
-                                      super.setState(() {});
                                     },
                                   )
                                 ],
